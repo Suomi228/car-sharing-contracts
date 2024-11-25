@@ -5,8 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/trips")
-public interface MyTripsController {
-    @GetMapping("/{id}")
-    String getMyTrips(@PathVariable Long id);
+@RequestMapping("/admin")
+public interface AdminController {
+    @GetMapping("/get")
+    String getCarList();
 }

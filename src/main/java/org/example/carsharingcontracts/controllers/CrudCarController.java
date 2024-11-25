@@ -7,7 +7,11 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/car")
-public interface CreateCarController {
+public interface CrudCarController {
     @PostMapping("/create")
     void createCar(@RequestBody CarInputModel carInputModel);
+    @PutMapping("/edit")
+    void editCar(@RequestBody CarInputModel carInputModel);
+    @DeleteMapping("/delete")
+    void deleteCar(@RequestParam Long carId);
 }
