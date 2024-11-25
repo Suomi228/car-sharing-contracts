@@ -8,5 +8,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/admin")
 public interface AdminController {
     @GetMapping("/get")
-    String getCarList();
+    String getAllCars();
+    @GetMapping("/get")
+    String getCarsByStatus(@RequestParam String carStatus);
+    @GetMapping("/carClass")
+    String getCarsByClass(@RequestParam String carClass);
 }

@@ -4,10 +4,9 @@ import org.example.carsharingcontracts.input.AdressInputModel;
 
 public record ReturnCarModel(
         BaseViewModel base,
+        int rentId,
         String startDate,
-        String endDate,
         String carName,
-        AdressInputModel adressInputModel,
-        double totalPrice
+        AdressInputModel adressInputModel
 ) {
 }
