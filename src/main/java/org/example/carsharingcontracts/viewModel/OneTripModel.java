@@ -1,7 +1,7 @@
 package org.example.carsharingcontracts.viewModel;
 
 public record OneTripModel (
-        int rentId,
+        long rentId,
         String startDate,
         String endDate,
         String carName,

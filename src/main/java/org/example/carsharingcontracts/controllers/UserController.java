@@ -2,6 +2,7 @@ package org.example.carsharingcontracts.controllers;
 
 import org.example.carsharingcontracts.viewModel.ReturnCarModel;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -11,12 +12,10 @@ public interface UserController {
     String getCars();
     @GetMapping("/carClass")
     String getCarsByClass(@RequestParam String carClass);
-    @GetMapping("/price")
-    String getCarsByPrice(@RequestParam Double price);
     @PostMapping("/rent")
     void rentCar(@RequestParam Long userId,  @RequestParam Long carId);
     @GetMapping("/{id}")
-    String getMyTrips(@PathVariable Long id);
+    String getMyTrips(@PathVariable Long id, Model model);
     @PostMapping("/return")
     void returnCar(@RequestBody ReturnCarModel returnCarModel);
 }
