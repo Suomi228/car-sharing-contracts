@@ -4,14 +4,15 @@ import org.example.carsharingcontracts.viewModel.ReturnCarModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/user")
 public interface UserController {
     @GetMapping("/homePage")
     String homePage(@RequestParam(value = "carClass", required = false) String carClass, Model model);
-    @PostMapping("/rent")
-    void rentCar(@RequestParam Long userId,  @RequestParam Long carId);
+    @PostMapping("/rentCar")
+    String rentCar(@RequestParam Long customerId, @RequestParam Long carId, RedirectAttributes redirectAttributes);
     @GetMapping("/{id}")
     String getMyTrips(@PathVariable Long id, Model model);
     @GetMapping("/returnCarList")
