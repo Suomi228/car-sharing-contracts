@@ -10,12 +10,10 @@ import org.springframework.web.bind.annotation.*;
 public interface UserController {
     @GetMapping("/homePage")
     String homePage(@RequestParam(value = "carClass", required = false) String carClass, Model model);
-    @GetMapping("/carClass")
-    String getCarsByClass(@RequestParam String carClass);
     @PostMapping("/rent")
     void rentCar(@RequestParam Long userId,  @RequestParam Long carId);
     @GetMapping("/{id}")
     String getMyTrips(@PathVariable Long id, Model model);
-    @PostMapping("/return")
-    void returnCar(@RequestBody ReturnCarModel returnCarModel);
+    @GetMapping("/returnCarList")
+    String returnCarPage(@PathVariable Long userId, Model model);
 }
