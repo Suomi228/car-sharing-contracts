@@ -15,8 +15,8 @@ public interface UserController {
     String homePage(@RequestParam(value = "carClass", required = false) String carClass, Model model);
     @PostMapping("/rentCar")
     String rentCar(Principal principal, @RequestParam Long carId, RedirectAttributes redirectAttributes);
-    @GetMapping("/{id}")
-    String getMyTrips(@PathVariable Long id, Model model);
+    @GetMapping("/myTrips")
+    String getMyTrips(Principal principal, Model model);
     @GetMapping("/returnCar")
     String returnCarPage(Principal principal, Model model);
     @PostMapping("/returnCar")
