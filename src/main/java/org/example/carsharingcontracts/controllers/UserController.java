@@ -18,5 +18,5 @@ public interface UserController {
     @GetMapping("/{id}")
     String getMyTrips(@PathVariable Long id, Model model);
     @GetMapping("/returnCarList")
-    String returnCarPage(@PathVariable Long userId, Model model);
+    String returnCarPage(Principal principal, Model model);
 }
