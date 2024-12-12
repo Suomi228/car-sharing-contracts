@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
 public class CarInputModel {
+    private long id;
+
     @NotBlank(message = "Введите имя")
     private String name;
     @NotNull(message = "Введите год")
@@ -22,11 +24,11 @@ public class CarInputModel {
     @NotBlank(message = "Введите адрес")
     private String adress;
 
-
     public CarInputModel() {
     }
 
-    public CarInputModel(String name, int year, String number, String carClass, double hourPrice, String status, String adress) {
+    public CarInputModel(long id, String name, int year, String number, String carClass, double hourPrice, String status, String adress) {
+        this.id = id;
         this.name = name;
         this.year = year;
         this.number = number;
@@ -42,6 +44,14 @@ public class CarInputModel {
 
     public void setName(@NotBlank(message = "Введите имя") String name) {
         this.name = name;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     @NotBlank(message = "Введите год")
