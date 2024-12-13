@@ -20,7 +20,7 @@ public interface AuthController {
     @PostMapping("/login-error")
     String onFailedLogin(@ModelAttribute("number") String number, RedirectAttributes redirectAttributes);
     @PostMapping("/register")
-    String register(@ModelAttribute @Valid SignupInputModel signupInputModel, BindingResult bindingResult);
+    String register(@ModelAttribute @Valid SignupInputModel signupInputModel, BindingResult bindingResult, RedirectAttributes redirectAttributes);
     @GetMapping("/register")
     String showRegisterForm(Model model);
 }
