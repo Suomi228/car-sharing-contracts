@@ -12,7 +12,7 @@ import java.security.Principal;
 @RequestMapping("/user")
 public interface UserController {
     @GetMapping("/homePage")
-    String homePage(@RequestParam(value = "carClass", required = false) String carClass, Model model);
+    String homePage(@RequestParam(value = "carClass", required = false) String carClass, Model model, Principal principal);
     @PostMapping("/rentCar")
     String rentCar(Principal principal, @RequestParam Long carId, RedirectAttributes redirectAttributes);
     @GetMapping("/myTrips")
